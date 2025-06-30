@@ -1,8 +1,10 @@
 name: Hello
 on: push
 jobs: 
-  hello:
+  print:
     runs-on: ubuntu-latest
+    env:
+      ACTOR: ${{ github.actor }}
     steps:
-      - run: echo "Hello, world!"
+      - run: echo "Hey ${ACTOR}, Hello, world!"
       - uses: actions/checkout@v4
